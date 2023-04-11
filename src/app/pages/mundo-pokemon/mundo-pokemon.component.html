@@ -1,0 +1,47 @@
+<h1>A buscar Pokemons</h1>
+<table class="table table-bordered border-primary">
+    <thead>
+      <tr>
+        
+        <th scope="col">Nombre</th>
+        <th scope="col">Tipo</th>
+        <th scope="col">Habilidad</th>
+      </tr>
+    </thead>
+    <tbody>
+
+    <tr>
+
+        <td><input type="text" aria-label="First name" class="form-control" placeholder="Buscar pokemon-nombre"> </td>
+        <td><input type="text" aria-label="First name" class="form-control" placeholder="Buscar pokemon-tipo"> </td>
+        <td>
+          
+          <div class="d-flex" role="search">
+
+            <!--SSSólo keyup y no keyup.enter para mandar en tiempo real-->
+            <input #txtBuscarHabilidad 
+            (keyup.enter)="buscarHabilidad( txtBuscarHabilidad.value )"
+            class="form-control me-2" 
+            type="search" 
+            placeholder="Buscar pokemon-habilidad" 
+            aria-label="Search">
+            <button (click)="buscarHabilidad( txtBuscarHabilidad.value )"
+            class="btn btn-outline-success" type="submit">Buscar</button>
+          </div>
+        
+        </td>
+
+      </tr>
+      <tr *ngFor="let pokemon of pokemons">
+
+        <td > <a [routerLink]="['/pokemon', pokemon.name]"> {{pokemon.name}} </a> </td>
+
+
+        <td> <p *ngFor="let tipo of pokemon.tipo"> {{tipo.type.name}} </p></td>
+
+        <td> <p *ngFor="let habilidad of pokemon.habilidad"> {{habilidad.ability.name}} </p></td>
+      </tr>
+
+
+    </tbody>
+  </table>

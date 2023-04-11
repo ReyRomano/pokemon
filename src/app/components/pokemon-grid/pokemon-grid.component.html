@@ -1,0 +1,12 @@
+<p>pokemon-grid works!</p>
+<div class="row">
+    <div class="col-md-3 mb-5" *ngFor="let ability of abilitys">
+
+        <div>
+            <h3> {{ability.ability}}</h3>
+            <div class="col-2">
+                {{ability.slot}}
+            </div>
+        </div>
+    </div>
+</div>
