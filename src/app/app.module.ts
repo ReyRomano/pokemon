@@ -11,7 +11,9 @@ import { PokemonComponent } from './pages/pokemon/pokemon.component';
 import { ComponentsModule } from './components/components.module';
 import { PagesModule } from './pages/pages.module';
 
-
+//  ------------------  Inicio Edito  -------------
+import { NgxPaginationModule } from 'ngx-pagination';
+//  ------------------  Fin Edito  -------------
 
 @NgModule({
   declarations: [
@@ -25,6 +27,9 @@ import { PagesModule } from './pages/pages.module';
     HttpClientModule,
     ComponentsModule,
     PagesModule,
+    //  ------------------  Inicio Edito  -------------
+    NgxPaginationModule
+    //  -----------------  Fin Edito  ------------------
     
   ],
   providers: [],

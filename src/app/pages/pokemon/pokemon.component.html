@@ -3,14 +3,50 @@
 
 <div class="row">
     <div class="col">
-        <h3>Base Experiencia: </h3>{{pokemons?.base_experience}}
-        <!-- <app-pokemon-grid [pokemons]="pokemons"></app-pokemon-grid>-->
+        <h3>Base de Experiencia: </h3>{{pokemons?.base_experience}}
 
-        <h3>Order:</h3> {{pokemons?.order}}
+        <h3>Orden:</h3> {{pokemons?.order}}
 
-        <h3>weight:</h3> {{pokemons?.weight}}
+        <h3>Peso:</h3> {{pokemons?.weight}}
+
+        <h3>Nombre:</h3>  {{pokemons?.name}}
+
+        <!-- <h3>Habilidad:</h3> {{pokemons?.abilities[0].ability.name}} -->
+        <h3>Habilidad:</h3> <p  *ngFor="let ability of pokemons?.abilities"> {{ability.ability.name}} </p>
+
+        <!-- <h3>Tipo:</h3> {{pokemons?.types[0].type.name}} -->
+        <h3>Tipo:</h3> <p *ngFor="let type of pokemons?.types"> {{type.type.name}} </p>
     </div>
 
-    <button type="button" class="btn btn-warning">Captura Pokemon!</button>
+    <div class="row container m-4">
+    <!-- <button (click)="buscarPelicula( txtBuscar.value)"
+          class="btn btn-outline-success" type="submit">Buscar</button> -->
+    <button type="button" class="btn btn-warning"
+    (click)="capturarPokemon( texto )">
+    
+    Capturar Mi Primer Pokemon!</button>
+
+    </div>
+
+    <!--    -----------------   Inicio Edito:   ------------- -->
+    <div class="container">
+        <div class="row m-4">
+            <div class="col-4">
+
+                <button type="button" class="btn btn-success"
+                (click)="capturarPokemon2( texto2 )">
+                
+                Captura Nuevo Pokemon  2 !</button>
+
+            </div>
+        </div>
+    </div>
+
+    <div class="row m-4">
+        <!-- <button (click)="buscarPelicula( txtBuscar.value)"
+              class="btn btn-outline-success" type="submit">Buscar</button> -->
+    </div>
+    <!--    -----------------   Fin Edito:   ------------- -->
+
 </div>
 

@@ -5,8 +5,6 @@ import { PokemonComponent } from './pokemon/pokemon.component';
 import { MisPokemonsComponent } from './mis-pokemons/mis-pokemons.component';
 import { ComponentsModule } from '../components/components.module';
 
-
-
 @NgModule({
   declarations: [
     //MundoPokemonComponent,

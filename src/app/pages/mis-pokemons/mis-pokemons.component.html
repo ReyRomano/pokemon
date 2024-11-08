@@ -1,1 +1,59 @@
-<p>mis-pokemons works!</p>
+<h2>mis-pokemons works, Pokemon Capturado: <small class="text-capitalize"> {{dato}} </small> </h2>
+
+<th></th>
+
+<table class="table table-bordered border-primary">
+    <thead>
+      <tr>
+        
+        <th scope="col">Id</th>
+        <th scope="col">Nombre</th>
+        <!-- <th scope="col">Tipo</th>
+        <th scope="col">Habilidad</th> -->
+        <th scope="col">Orden</th>
+        <th scope="col">Experiencia</th>
+        <th scope="col">Peso</th>
+        <th scope="col">Altura</th>
+      </tr>
+    </thead>
+    <tbody>
+
+      <tr>
+
+        <td > {{id}} </td>
+        <td > {{dato}} </td>
+        <!-- <td> <p> tipo.type.name </p></td>
+        <td> <p> habilidad.ability.name </p></td> -->
+        <td> <p> {{orden}} </p></td>
+        <td> <p>{{experiencia}} </p></td>
+        <td> <p> {{peso}} </p></td>
+        <td> <p> {{altura}} </p></td>
+
+      </tr>   
+      
+      <tr *ngIf="pokemonCapturado[1].nombre.length != 0" >
+        <td> {{pokemonCapturado[1].id}} </td>
+        <td> {{pokemonCapturado[1].nombre}} </td>
+        <td> <p> {{pokemonCapturado[1].orden}} </p></td>
+        <td> <p>{{pokemonCapturado[1].experiencia}} </p></td>
+        <td> <p> {{pokemonCapturado[1].peso}} </p></td>
+        <td> <p> {{pokemonCapturado[1].altura}} </p></td>
+      </tr>
+      
+      <tr *ngIf="pokemonCapturado[2].nombre.length">  <!--  Si existe valor pokemonCapturado[2].nombre  -->
+      <!-- Ó: <tr *ngIf="(pokemonCapturado[2].nombre)!''"> --> 
+        <td> {{pokemonCapturado[2].id}} </td>
+        <td> {{pokemonCapturado[2].nombre}} </td>
+        <td> <p> {{pokemonCapturado[2].orden}} </p></td>
+        <td> <p>{{pokemonCapturado[2].experiencia}} </p></td>
+        <td> <p> {{pokemonCapturado[2].peso}} </p></td>
+        <td> <p> {{pokemonCapturado[2].altura}} </p></td>
+      </tr>
+
+      </tbody>
+    </table>
+
+
+<!--    <button type="button" class="btn btn-warning"
+(click)="capturandoMiPokemon( dato )">
+Muestra mi pokemon</button> -->

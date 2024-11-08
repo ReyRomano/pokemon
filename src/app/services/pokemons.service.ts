@@ -10,23 +10,42 @@ import { MundoPokemonComponent } from '../pages/mundo-pokemon/mundo-pokemon.comp
 })
 export class PokemonsService {
 
+  //-------------------------------Inicio edito: No fue necesario
+  //private baseUrl: string = 'https://pokeapi.co/api';
+  //----------------------------Fin edito
+
   constructor( private http: HttpClient) { }
 
   getPokemon():Observable<PokemonResponse> {
 
-    return this.http.get<PokemonResponse>('https://pokeapi.co/api/v2/pokemon');  //Endpoint aqui
-    //  return this.http.get<PokemonResponse>('https://pokeapi.co/api/v2/pokemon?limit=100000&offset=0');  //Endpoint aqui
+    //Original:  --------------return this.http.get<PokemonResponse>('https://pokeapi.co/api/v2/pokemon');  //Endpoint aqui
+
+    //  ---------------------------Edito:----------- Y está bien:
+
+    //Constantes para mi direccion d mi api:
+    const baseUrl: string = 'https://pokeapi.co/api';
+    let primerPokemon: number = 0;
+    let ultimoPokemon: number = 250;
+
+    return this.http.get<PokemonResponse>(`${baseUrl}/v2/pokemon?offset=${primerPokemon}&limit=${ultimoPokemon}`);  //Endpoint aqui
+    //El enlace original: https://pokeapi.co/api/v2/pokemon?offset=0&limit=50
+
+    // ------------------------Fin Edito ------------------------
   }
-
-  /*buscarPokemons(texto: string ):Observable<PokemonResponse[]> {
-
-    return this.http.get<PokemonResponse[]>('https://pokeapi.co/api/v2/pokemon/ditto');  //Endpoint aqui
-    //  return this.http.get<PokemonResponse>('https://pokeapi.co/api/v2/pokemon?limit=100000&offset=0');  //Endpoint aqui
-  } */
 
   getCaracterisiticas(nombre: string) {
 
     return this.http.get(`https://pokeapi.co/api/v2/pokemon/${nombre}`);
   }
+
+
+  //  ---------------  Edito  ------------
+  getBuscarPokemon(texto: string ):Observable<PokemonResponse> {
+
+    return this.http.get<PokemonResponse>(`https://pokeapi.co/api/v2/pokemon/${texto}`);  //Endpoint aqui
+  }
+  //  -------------  Fin edito  ---------------
+
+
 
 }

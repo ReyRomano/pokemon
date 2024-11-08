@@ -1,4 +1,4 @@
-export interface PokemonResponse {
+    export interface PokemonResponse {
     abilities:                Ability[];
     base_experience:          number;
     forms:                    Species[];
@@ -184,7 +184,7 @@ export interface Type {
 export interface PokemonBase {
     name: string;
     url:  string;
-}
+}   
 
 
 /*    export interface PokemonResponse {
